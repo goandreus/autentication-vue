@@ -19,7 +19,7 @@ auth.onAuthStateChanged(function(user) {
     store, 
     vuetify,
     render: h => h(App)
-  }).$mount('#app')
+  }).$mount('#app') 
 });
 
 
