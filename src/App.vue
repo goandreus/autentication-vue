@@ -18,7 +18,7 @@ import { mapState } from "vuex";
 
 export default {
   components: {Navbar},
-  name: 'App',
+  name: 'App', 
   data () {
     return {
       
