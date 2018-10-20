@@ -57,7 +57,7 @@ export default {
       this.ingresar(provider);
     },
     async ingresar(provider){
-      firebase.auth().languageCode = 'es';
+      firebase.auth().languageCode = 'es'; 
 
       try {
         //Ingreso Usuario
