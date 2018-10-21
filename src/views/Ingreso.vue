@@ -62,7 +62,7 @@ export default {
       try {
         //Ingreso Usuario
         const result = await firebase.auth().signInWithPopup(provider);
-        const user = result.user;
+        const user = result.user; 
         console.log(user); 
         
         this.setUsuario(user)
