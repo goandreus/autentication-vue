@@ -32,7 +32,7 @@ const router = new Router({
       component: () => import(/* webpackChunkName: "about" */ './views/Chat.vue'),
       meta: {requiresAuth: true}
     }, 
-  ]
+  ] 
 })
  
 router.beforeEach((to, from, next) => {
