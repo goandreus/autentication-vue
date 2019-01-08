@@ -33,7 +33,7 @@ const router = new Router({
       meta: {requiresAuth: true}
     }, 
   ] 
-})
+}) 
  
 router.beforeEach((to, from, next) => {
 
