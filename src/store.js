@@ -17,7 +17,7 @@ export default new Vuex.Store({
       }else{
         state.usuario = payload
       }
-    }
+    } 
   },
   actions: {
     async setUsuario({commit}, user){
