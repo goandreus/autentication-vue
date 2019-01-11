@@ -36,7 +36,7 @@ const router = new Router({
 }) 
   
 router.beforeEach((to, from, next) => {
-
+ 
   const user = auth.currentUser
 
   if (to.matched.some(record => record.meta.requiresAuth)) {
