@@ -10,7 +10,7 @@ export default new Vuex.Store({
   state: {
     usuario: ''
   },
-  mutations: {
+  mutations: { 
     nuevoUsuario(state, payload){
       if(payload === null){
         state.usuario = ''
