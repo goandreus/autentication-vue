@@ -2,7 +2,7 @@ const firebase = require("firebase/app");
 require("firebase/auth");
 require("firebase/firestore");
 require("firebase/storage");
-
+ 
 
 const config = {
     apiKey: "AIzaSyBHPqm7a0W3iajaJ72wZm1xCzzFPa_7IBE",
