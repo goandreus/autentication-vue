@@ -3,7 +3,7 @@
         <v-flex xs12 sm8 md6 xl4>
             <v-card>
                 <v-card-text class="display-1 text-uppercase  white--text
-                text-xs-center" :class="registro ? 'success': 'accent'">
+                text-center" :class="registro ? 'success': 'accent'">
                     <span v-if="!registro">Ingreso</span>
                     <span v-if="registro">Registro</span>
                 </v-card-text>
@@ -31,7 +31,7 @@
 
 <script>
 
-import { firebase, auth} from "@/firebase";
+import { firebase, auth, db} from "@/firebase";
 export default {
     data(){
         return{
@@ -48,6 +48,20 @@ export default {
                 const result = await firebase.auth().signInWithPopup(provider);
                 const user = result.user;
                 console.log(user);
+
+                //Construir un usuario
+                const usuario = {
+                    nombre: user.displayName,
+                    email: user.email,
+                    uid: user.uid,
+                    foto: user.photoURL
+                }
+                //guardar en firestore
+                await db.collection('usuarios').doc(usuario.uid).set(
+                    usuario
+                )
+                console.log('usuario guardado');
+
             } catch (error) {
                 console.log(error);
             }
