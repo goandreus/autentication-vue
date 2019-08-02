@@ -9,7 +9,7 @@
                 </v-card-text>
 
                 <v-card-text>
-                    <v-btn block color="error">
+                    <v-btn block color="error" @click="google">
                         <v-icon left dark>fab fa-google</v-icon>
                         google
                     </v-btn>
@@ -30,10 +30,29 @@
 </template>
 
 <script>
+
+import { firebase, auth} from "@/firebase";
 export default {
     data(){
         return{
             registro: false
+        }
+    },
+    methods:{
+        async google(){
+            console.log('google')
+            const provider = new firebase.auth.GoogleAuthProvider();
+            firebase.auth().languageCode = 'es';
+
+            try {
+                const result = await firebase.auth().signInWithPopup(provider);
+                const user = result.user;
+                console.log(user);
+            } catch (error) {
+                console.log(error);
+            }
+
+            
         }
     },
 }

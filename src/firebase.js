@@ -5,13 +5,13 @@ require("firebase/storage");
 
 
 const config = {
-    apiKey: "AIzaSyCNfO1NU4lpTj7OannnLxZ1ndKFIh6rRyk",
-    authDomain: "facey-71f1c.firebaseapp.com",
-    databaseURL: "https://facey-71f1c.firebaseio.com",
-    projectId: "facey-71f1c",
-    storageBucket: "facey-71f1c.appspot.com",
-    messagingSenderId: "857163560610",
-    appId: "1:857163560610:web:ebdc4fa69b7443ea"
+    apiKey: "AIzaSyBHPqm7a0W3iajaJ72wZm1xCzzFPa_7IBE",
+    authDomain: "facey-92ec2.firebaseapp.com",
+    databaseURL: "https://facey-92ec2.firebaseio.com",
+    projectId: "facey-92ec2",
+    storageBucket: "",
+    messagingSenderId: "576630320688",
+    appId: "1:576630320688:web:f9fd88094233729b"
   };
   // Initialize Firebase
   firebase.initializeApp(config);
