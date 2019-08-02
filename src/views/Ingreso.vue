@@ -33,6 +33,7 @@
 
 import { firebase, auth, db} from "@/firebase";
 import { mapMutations } from "vuex";
+import router from '@/router';
 export default {
     data(){
         return{
@@ -77,6 +78,7 @@ export default {
                     usuario
                 )
                 console.log('usuario guardado');
+                router.push({name:'home'})
 
             } catch (error) {
                 console.log(error);

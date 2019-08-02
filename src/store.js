@@ -1,5 +1,7 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
+import { auth } from "@/firebase"
+import router from '@/router'
 
 Vue.use(Vuex)
 
@@ -21,6 +23,12 @@ export default new Vuex.Store({
         foto: user.photoURL
     }
     commit('nuevoUsuario',usuario)
+    },
+    cerrarSesion({commit}){
+      auth.signOut()
+      commit('nuevoUsuario', null)
+      router.push({name: 'ingreso'})
     }
-  }
+  },
+  
 })

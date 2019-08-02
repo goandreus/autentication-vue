@@ -2,10 +2,12 @@
   <v-app>
     <v-app-bar app>
       <v-toolbar-title class="headline text-uppercase">
-        <span>Vue</span>
+        <router-link :to="{name:'home'}">
+          <span>Vue</span>
+        </router-link>
       </v-toolbar-title>
       <v-spacer></v-spacer>
-      <v-btn>
+      <v-btn @click="cerrarSesion">
         <span class="mr-2">Cerrar Sesion</span>
         <v-icon>fas fa-address-book</v-icon>
       </v-btn>
@@ -21,11 +23,14 @@
 </template>
 
 <script>
-
+import { mapActions } from "vuex";
 export default {
   name: 'App',
   data: () => ({
     //
   }),
+  methods:{
+    ...mapActions(['cerrarSesion'])
+  }
 };
 </script>
