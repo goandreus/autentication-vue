@@ -1,7 +1,7 @@
 <template>
   <v-layout justify-center >
     <v-flex xs6>
-      <v-card class="text-xs-center">
+      <v-card class="text-center">
         <v-card-text>
           <v-avatar>
             <img :src="usuario.foto" alt="avatar">

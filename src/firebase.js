@@ -9,7 +9,7 @@ const config = {
     authDomain: "facey-92ec2.firebaseapp.com",
     databaseURL: "https://facey-92ec2.firebaseio.com",
     projectId: "facey-92ec2",
-    storageBucket: "",
+    storageBucket: "gs://facey-92ec2.appspot.com/",
     messagingSenderId: "576630320688",
     appId: "1:576630320688:web:f9fd88094233729b"
   };
