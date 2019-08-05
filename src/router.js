@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
+
 import { auth } from "@/firebase";
 
 Vue.use(Router)
@@ -7,7 +8,6 @@ Vue.use(Router)
 const router = new Router({
   mode: 'history',
   base: process.env.BASE_URL,
-
   routes: [
     {
       path: '/',
@@ -19,7 +19,13 @@ const router = new Router({
       path: '/ingreso',
       name: 'ingreso',
       component: () => import(/* webpackChunkName: "about" */ './views/Ingreso.vue')
-    }
+    },
+    {
+      path: '/admin',
+      name: 'admin',
+      component: () => import(/* webpackChunkName: "about" */ './views/Admin.vue'),
+      meta: {requiresAuth: true}
+    },
   ]
 })
 

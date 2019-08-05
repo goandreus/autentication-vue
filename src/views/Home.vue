@@ -6,9 +6,9 @@
 
 <script>
   import { mapState } from "vuex";
-export default {
-  computed:{
-    ...mapState(['usuario'])
+  export default {
+    computed:{
+      ...mapState(['usuario'])
+    }
   }
-};
 </script>
