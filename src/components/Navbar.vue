@@ -1,7 +1,7 @@
 <template>
   <nav>
-    <v-toolbar app>
-      <v-toolbar-side-icon @click="drawer = !drawer"></v-toolbar-side-icon>
+    <v-app-bar app>
+      <v-app-bar-nav-icon @click="drawer = !drawer"></v-app-bar-nav-icon>
       <v-toolbar-title class="headline text-uppercase">
         <router-link :to="{name:'home'}">
           <span>Vue</span>
@@ -12,7 +12,7 @@
         <span class="mr-2">Cerrar sesión</span>
         <v-icon>fas fa-address-book</v-icon>
       </v-btn>
-    </v-toolbar>
+    </v-app-bar>
 
     <v-navigation-drawer
         v-model="drawer" class="green" app>
@@ -32,13 +32,13 @@
 
      
         <v-list-item v-for="(item, index) in items" :key="index"
-        :to="item.to">
+        :to="item.to" color="white">
           <v-list-item-icon>
-              <v-icon>{{ item.icon }}</v-icon>
+              <v-icon color="white">{{ item.icon }}</v-icon>
             </v-list-item-icon>
 
-            <v-list-item-content>
-              <v-list-item-title>{{ item.title }}</v-list-item-title>
+            <v-list-item-content color="accent">
+              <v-list-item-title color="success">{{ item.title }}</v-list-item-title>
             </v-list-item-content>
 
         </v-list-item>
@@ -55,7 +55,7 @@ import { mapActions, mapState } from "vuex";
 export default {
   data() {
     return {
-      drawer: true,
+      drawer: false,
       items: [
           { title: 'Dashboard', icon: 'fas fa-address-card', to: {name:'home'} },
           { title: 'Account', icon: 'fas fa-address-card', to: {name:'ingreso'} },

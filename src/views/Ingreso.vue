@@ -3,7 +3,7 @@
     <v-flex xs12 sm8 md6 xl4>
       <v-card>
 
-        <v-card-text class="display-1 text-uppercase white--text text-xs-center" :class="registro ? 'success' : 'accent'">
+        <v-card-text class="display-1 text-uppercase white--text text-center" :class="registro ? 'success' : 'accent'">
           <span v-if="!registro">Ingreso</span>
           <span v-if="registro">Registro</span>
         </v-card-text>

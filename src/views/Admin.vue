@@ -12,9 +12,9 @@
         </v-card-text>
         <v-card-text>
           
-          <input type="file" ref="boton" class="d-none" @change="buscarImagen($event)">
+          <input type="file" ref="boton" class="d-none"  @change="buscarImagen($event)">
 
-          <v-btn color="primary" @click="$refs.boton.click()">Buscar imagen</v-btn>
+          <v-btn color="green" @click="$refs.boton.click()">Buscar imagen</v-btn>
           <v-btn color="secondary" :disabled="file === null"
           @click="subirImagen()" :loading="loading">Subir imagen</v-btn>
 
