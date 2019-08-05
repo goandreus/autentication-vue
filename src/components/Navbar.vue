@@ -14,7 +14,8 @@
       </v-btn>
     </v-toolbar>
 
-    <v-navigation-drawer  class="indigo" v-model="drawer" app>
+    <v-navigation-drawer
+        v-model="drawer" class="green" app>
 
       <v-layout column align-center mt-5>
         <v-flex>
@@ -29,20 +30,20 @@
 
       <v-divider></v-divider>
 
-      <v-list-item>
-        <v-list-item-content v-for="(item, index) in items" :key="index"
+     
+        <v-list-item v-for="(item, index) in items" :key="index"
         :to="item.to">
-          <v-list-tile-action>
-            <v-icon class="white--text">{{item.icon}}</v-icon>
-          </v-list-tile-action>
+          <v-list-item-icon>
+              <v-icon>{{ item.icon }}</v-icon>
+            </v-list-item-icon>
 
-          <v-list-tile-content>
-            <v-list-tile-title  class="white--text">{{item.title}}</v-list-tile-title>
-          </v-list-tile-content>
+            <v-list-item-content>
+              <v-list-item-title>{{ item.title }}</v-list-item-title>
+            </v-list-item-content>
 
-        </v-list-item-content>
+        </v-list-item>
 
-      </v-list-item>
+     
 
     </v-navigation-drawer>
 
