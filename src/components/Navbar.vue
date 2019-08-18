@@ -30,7 +30,7 @@
 
       <v-divider></v-divider>
 
-     
+
         <v-list-item v-for="(item, index) in items" :key="index"
         :to="item.to" color="white">
           <v-list-item-icon>
@@ -43,7 +43,7 @@
 
         </v-list-item>
 
-     
+
 
     </v-navigation-drawer>
 
@@ -59,7 +59,8 @@ export default {
       items: [
           { title: 'Dashboard', icon: 'fas fa-address-card', to: {name:'home'} },
           { title: 'Account', icon: 'fas fa-address-card', to: {name:'ingreso'} },
-          { title: 'Admin', icon: 'fas fa-address-card', to: {name:'admin'} }
+          { title: 'Admin', icon: 'fas fa-address-card', to: {name:'admin'} },
+        { title: 'Chat', icon: 'fas fa-address-card', to: {name:'chat'} },
         ]
     }
   },
