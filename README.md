@@ -1,4 +1,4 @@
-# face-y-gmail
+# Auth FB and  Gmail
 
 ## Project setup
 ```
