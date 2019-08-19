@@ -3,7 +3,7 @@
         <v-flex>
             <v-card>
                 <v-card-text>
-                    <h3>Bienvenido: {{usuario.nombre}}</h3>
+                    <h3>Bienvenido usuario {{usuario.nombre}}</h3>
                 </v-card-text>
 
                 <v-card-text>
