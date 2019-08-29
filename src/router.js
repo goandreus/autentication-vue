@@ -31,7 +31,7 @@ const router = new Router({
       name: 'chat',
       component: () => import(/* webpackChunkName: "about" */ './views/Chat.vue'),
       meta: {requiresAuth: true}
-    },
+    }, 
   ]
 })
 
