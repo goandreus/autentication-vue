@@ -34,6 +34,7 @@
 
 <script>
     import  { mapState } from "vuex";
+    import  { db }  from "@/firebase";
     export default {
         data(){
         return{
@@ -54,6 +55,13 @@
         enviarMensaje(){
             if(this.valido){
             console.log('mensaje enviado', this.mensaje);
+            db.collection('chats').add({
+                mensaje: this.mensaje,
+                nombre: this.usuario.nombre,
+                foto: this.usuario.foto,
+                feccha: Date.now()
+            }).catch(error => console.log(error))
+            this.mensaje = ''
             }else{
                 console.log('mensaje vacio');
             }
