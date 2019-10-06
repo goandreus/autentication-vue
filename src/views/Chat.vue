@@ -6,8 +6,8 @@
                     <h3>Bienvenido usuario {{usuario.nombre}}</h3>
                 </v-card-text>
 
-                <v-card-text>
-                    <div class="text-right mr-2"
+                <v-card-text style="height: 60vh; overflow: auto" v-chat-scroll> 
+                    <div :class="item.nombre === usuario.nombre  ? 'text-right' : 'text-left'"
                     v-for="(item, index) in mensajes" :key="index"
                     >
                         <v-chip>
@@ -37,6 +37,8 @@
 <script>
     import  { mapState } from "vuex";
     import  { db }  from "@/firebase";
+    import moment from 'moment'
+
     export default {
         data(){
         return{
@@ -74,13 +76,21 @@
     },
 
     created(){
-        let ref = db.collection('chats')
+        moment.locale('es');
+        let ref = db.collection('chats').orderBy('fecha','desc').limit(10)
 
         ref.onSnapshot(querySnapshot => {
             this.mensajes = []
+
             querySnapshot.forEach( doc =>{
-                this.mensajes.push(doc.data())
+                this.mensajes.unshift({
+                    mensaje: doc.data().mensaje,
+                    foto: doc.data().foto,
+                    nombre: doc.data().nombre,
+                    fecha:  moment(doc.data().fecha).format('lll'),
+                })
             });
+            
             console.log(this.mensajes)
         })
     }
