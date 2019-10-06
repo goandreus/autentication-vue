@@ -7,13 +7,15 @@
                 </v-card-text>
 
                 <v-card-text>
-                    <div class="text-right mr-2">
+                    <div class="text-right mr-2"
+                    v-for="(item, index) in mensajes" :key="index"
+                    >
                         <v-chip>
                             <v-avatar>
-                                <img :src="usuario.foto" alt="">
-                            </v-avatar> Mensaje de chat
+                                <img :src="item.foto" alt="">
+                            </v-avatar> {{item.mensaje}}
                         </v-chip>
-                        <p class="caption mr-2"> 06 febrero 2019 10AM</p>
+                        <p class="caption mr-2"> {{item.fecha}}</p>
                     </div>
                 </v-card-text>
                 <v-card-text>
@@ -43,6 +45,9 @@
             reglas: [
                 v => !!v || 'Tienes que escribir un mensaje'
             ],
+            mensajes: [
+
+            ]
         };
     },
 
@@ -59,7 +64,7 @@
                 mensaje: this.mensaje,
                 nombre: this.usuario.nombre,
                 foto: this.usuario.foto,
-                feccha: Date.now()
+                fecha: Date.now()
             }).catch(error => console.log(error))
             this.mensaje = ''
             }else{
@@ -67,5 +72,17 @@
             }
         }
     },
+
+    created(){
+        let ref = db.collection('chats')
+
+        ref.onSnapshot(querySnapshot => {
+            this.mensajes = []
+            querySnapshot.forEach( doc =>{
+                this.mensajes.push(doc.data())
+            });
+            console.log(this.mensajes)
+        })
+    }
     }
 </script>
