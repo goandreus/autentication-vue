@@ -11,7 +11,7 @@
     "@fortawesome/fontawesome-free": "^5.12.1",
     "core-js": "^2.6.11",
     "firebase": "^6.6.2",
-    "moment": "^2.24.0",
+    "moment": "^2.29.2",
     "roboto-fontface": "*",
     "vue": "^2.6.11",
     "vue-chat-scroll": "^1.3.6",
